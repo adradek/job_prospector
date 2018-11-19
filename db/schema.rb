@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 2018_11_19_164920) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "job_entries", force: :cascade do |t|
+  create_table "jobs", force: :cascade do |t|
     t.string "title", null: false
     t.string "url", null: false
     t.string "company"
@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 2018_11_19_164920) do
     t.text "tags", default: [], array: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "salary_cents", default: 0, null: false
+    t.integer "salary_cents"
     t.string "salary_currency", default: "USD", null: false
     t.integer "top_salary_cents"
     t.string "top_salary_currency", default: "USD", null: false

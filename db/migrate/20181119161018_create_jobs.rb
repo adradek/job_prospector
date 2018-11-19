@@ -1,6 +1,6 @@
-class CreateJobEntries < ActiveRecord::Migration[5.2]
+class CreateJobs < ActiveRecord::Migration[5.2]
   def change
-    create_table :job_entries do |t|
+    create_table :jobs do |t|
       t.string   :title,       null: false
       t.string   :url,         null: false
       t.string   :company
