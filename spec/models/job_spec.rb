@@ -21,10 +21,9 @@
 #  top_salary_currency :string           default("USD"), not null
 #
 
-class Job < ApplicationRecord
-  validates :title, presence: true
-  validates :url, presence: true
+require 'rails_helper'
 
-  monetize :salary_cents, allow_nil: true
-  monetize :top_salary_cents, allow_nil: true
+RSpec.describe Job, type: :model do
+  it { is_expected.to validate_presence_of(:title) }
+  it { is_expected.to validate_presence_of(:url) }
 end
