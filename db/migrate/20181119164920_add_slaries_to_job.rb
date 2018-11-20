@@ -1,6 +1,6 @@
 class AddSlariesToJob < ActiveRecord::Migration[5.2]
   def change
-    add_monetize :jobs, :salary, amount: { null: true, default: nil }
-    add_monetize :jobs, :top_salary, amount: { null: true, default: nil }
+    add_monetize :jobs, :salary_from
+    add_monetize :jobs, :salary_to
   end
 end

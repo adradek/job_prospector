@@ -28,10 +28,10 @@ ActiveRecord::Schema.define(version: 2018_11_19_164920) do
     t.text "tags", default: [], array: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "salary_cents"
-    t.string "salary_currency", default: "USD", null: false
-    t.integer "top_salary_cents"
-    t.string "top_salary_currency", default: "USD", null: false
+    t.integer "salary_from_cents", default: 0, null: false
+    t.string "salary_from_currency", default: "USD", null: false
+    t.integer "salary_to_cents", default: 0, null: false
+    t.string "salary_to_currency", default: "USD", null: false
   end
 
 end
