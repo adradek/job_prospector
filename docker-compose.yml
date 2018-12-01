@@ -18,3 +18,18 @@ services:
     image: postgres
     env_file:
       - .env/development/database
+
+  redis:
+    image: redis
+
+  sidekiq:
+    build: .
+    volumes:
+      - .:/usr/src/app
+    env_file:
+      - .env/development/database
+      - .env/development/web
+    command: bundle exec sidekiq
+    depends_on:
+      - database
+      - redis
